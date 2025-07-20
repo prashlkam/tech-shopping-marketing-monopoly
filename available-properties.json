@@ -1,0 +1,53 @@
+{
+  "BFSI": {
+    "description": "Banking, Financial Services & Insurance",
+    "properties": [
+      "Banking[2]",
+      "Capital Markets[4]",
+      "Insurance[1]",
+      "Fintech"
+    ]
+  },
+  "Manufacturing": {
+    "description": "Industrial Manufacturing and more",
+    "properties": [
+      "Industrial Manufacturing[3]",
+      "Automotive[2]",
+      "Aerospace[2]",
+      "Process Manufacturing[3]",
+      "Engineering, Procurement, and Construction (EPC)[2]"
+    ]
+  },
+  "Consumer Business": {
+    "description": "Retail and Consumer Goods",
+    "properties": [
+      "Retail[3]",
+      "Consumer Packaged Goods (CPG)[3]"
+    ]
+  },
+  "Hi-Tech & Services": {
+    "description": "Semiconductors, Software, Hardware",
+    "properties": [
+      "Semiconductors[2]",
+      "Software and Platforms[2]",
+      "Hardware and OEMs[2]",
+      "Professional Services[2]"
+    ]
+  },
+  "Healthcare": {
+    "description": "Healthcare industry sectors",
+    "properties": [
+      "Payers[2]",
+      "Providers[2]",
+      "Pharmacy Benefits Manager[2]",
+      "Health Tech Organizations[2]"
+    ]
+  },
+  "Energy & Utilities": {
+    "description": "Energy and utility sectors",
+    "properties": [
+      "Oil & Gas[3]",
+      "Utilities[3]"
+    ]
+  }
+}

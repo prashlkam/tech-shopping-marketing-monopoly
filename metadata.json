@@ -1,0 +1,6 @@
+{
+  "name": "Tech Shopping Marketing Monopoly",
+  "description": "A single-player adaptation of the classic Monopoly game, themed around the tech industry. The player's goal is to acquire all properties on the board by rolling dice, moving around the board, and managing their finances. The game ends when the player owns all properties or goes bankrupt.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
