@@ -23,6 +23,28 @@ The goal is to become the ultimate tech mogul by acquiring every single Industry
 
 ### Game Setup
 
+### Express Setup
+
+ - Ensure that you have Nodejs installed on your system
+ - Clone this repo or download the zip
+ - Extract the zip and `cd` into the folder
+ - Open a Terminal winfow in the folder
+ - Run the following command - to install all the dependencies
+  ```
+  npm install
+  ```
+ - To Run the game - type the following commmand
+  ```
+  npm run dev
+  ```
+ - This will open the dev server - and give you a URL.. The URL will be something like...
+  ```
+  http://localhost:5173/
+  ```
+ - Now open a browsr tab / window - and navigate to that URL
+ - You are now ready to play the game
+
+### Gameplay :-
 1.  The game loads automatically.
 2.  Before your first roll, choose your favorite avatar from the "Choose your Avatar" dropdown menu.
 
