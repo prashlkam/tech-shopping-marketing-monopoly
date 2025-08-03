@@ -249,7 +249,10 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         
         const player = { ...state.player };
         player.cash -= property.price;
-        player.ownedProperties.push(property.id);
+        // Ensure the property is not already owned before adding it
+        if (!player.ownedProperties.includes(property.id)) {
+            player.ownedProperties.push(property.id);
+        }
 
         let newState = {
             ...state,
