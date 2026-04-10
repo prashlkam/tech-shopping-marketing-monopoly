@@ -1,15 +1,30 @@
 
 import React from 'react';
 import { useGameReducer } from './hooks/useGameReducer';
+import { useAuth } from './hooks/useAuth';
 import GameBoard from './components/GameBoard';
 import PlayerInfo from './components/PlayerInfo';
 import Controls from './components/Controls';
 import CardPopup from './components/CardPopup';
+import AuthForm from './components/AuthForm';
 import { GameActionType } from './types';
 import { PROPERTIES, AVATARS } from './constants';
 
 const App: React.FC = () => {
   const [state, dispatch] = useGameReducer();
+  const { user, isAuthenticated, isLoading, login, register, logout } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="text-cyan-400 text-xl font-mono">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <AuthForm onLogin={login} onRegister={register} />;
+  }
 
   const handleRollDice = () => {
     if (state.isRolling || state.gameOver || state.awaitingBuyDecision || state.awaitingCardDrawDecision) return;
@@ -67,7 +82,15 @@ const App: React.FC = () => {
         />
       </main>
       <aside className="w-full lg:w-96 xl:w-[450px] bg-gray-800 p-4 rounded-lg shadow-2xl flex-shrink-0 space-y-4 border border-cyan-500/20">
-        <h1 className="text-3xl font-bold text-cyan-400 text-center tracking-widest">Tech Monopoly</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl lg:text-3xl font-bold text-cyan-400 tracking-widest">Tech Monopoly</h1>
+          <button
+            onClick={logout}
+            className="text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 px-3 py-1 rounded transition-colors"
+          >
+            Logout ({user?.displayName || user?.username})
+          </button>
+        </div>
         <PlayerInfo player={state.player} properties={state.properties} />
         <Controls
           state={state}
